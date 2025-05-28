@@ -1,0 +1,75 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg
+*.egg-info/
+dist/
+build/
+*.so
+*.whl
+*.zip
+*.tar.gz
+*.Python
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Environment variables
+.env
+.env.*
+!.env.template
+
+# IDE specific files
+.idea/ # PyCharm
+.vscode/ # VS Code
+*.sublime-project
+*.sublime-workspace
+
+# Operating System specific files
+.DS_Store # macOS
+Thumbs.db # Windows
+ehthumbs.db # Windows
+Desktop.ini # Windows
+
+# Logs and databases
+*.log
+*.log.*
+*.sqlite
+*.sqlite3
+*.db
+*.db3
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Python test reports
+.pytest_cache/
+.tox/
+nosetests.xml
+pytestdebug.log
+
+# Linters
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+
+# Secrets - Be cautious and add any other secret files you might create
+secrets.yaml
+secrets.json
+*.pem
+*.key
+
+# Other temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+.idea/
