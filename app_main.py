@@ -11,7 +11,7 @@ from config import (
     DEFAULT_SESSION_ID_PREFIX,
     SUB_AGENT_MODEL,
 )
-from agents import weather_agent_team
+from agents.root_agent import coordinator_team
 from core import call_agent_turn, session_service
 
 
@@ -28,19 +28,17 @@ async def run_conversation_loop():
     )
 
     app_runner = Runner(
-        agent=weather_agent_team,
+        agent=coordinator_team,
         app_name=APP_NAME,
         session_service=session_service,
     )
     print(f"Runner created for root agent '{app_runner.agent.name}'.")
 
     print(
-        f"  (Coordinator Model: {weather_agent_team.model}, Base Sub-Agent Model: {SUB_AGENT_MODEL})"
+        f"  (Coordinator Model: {coordinator_team.model}, Base Sub-Agent Model: {SUB_AGENT_MODEL})"
     )
     print("-" * 70)
-    print(
-        f"Starting chat with {weather_agent_team.name}. Type 'quit' or 'exit' to end."
-    )
+    print(f"Starting chat with {coordinator_team.name}. Type 'quit' or 'exit' to end.")
     print("-" * 70)
 
     while True:
