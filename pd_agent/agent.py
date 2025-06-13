@@ -3,6 +3,9 @@ from zoneinfo import ZoneInfo
 from google.adk.agents import Agent
 from config import ROOT_AGENT_MODEL
 
+from pd_agent.instructions import instructions
+
+
 def get_weather(city: str) -> dict:
     """Retrieves the current weather report for a specified city.
 
@@ -59,10 +62,11 @@ root_agent = Agent(
     name="weather_time_agent",
     model=ROOT_AGENT_MODEL,
     description=(
-        "Agent to answer questions about the time and weather in a city."
+        """This agent specializes in data manipulation and feature engineering within a Pandas DataFrame. It understands
+         the structure of a given DataFrame, including the meaning of each column. Based on a user's request, it 
+         generates the Python code required to create a new, derived feature (column) from the existing data. Its 
+         primary function is to translate a high-level feature description into executable Pandas code."""
     ),
-    instruction=(
-        "You are a helpful agent who can answer user questions about the time and weather in a city."
-    ),
+    instruction=instructions,
     tools=[get_weather, get_current_time],
 )
