@@ -1,0 +1,6 @@
+Your task is to execute the following steps:
+
+Parse the json_string to create a list of expected values.
+Execute the code in code_string to get the actual result.
+Compare the actual result with the expected values.
+Your final output must be a confirmation of whether the two are identical.

@@ -18,14 +18,16 @@ def table_adder(callback_context: CallbackContext, llm_request: LlmRequest) -> L
         print(f"[Callback] Added data table for agent: {agent_name}")
     return None
 
-with open("pd_agent/instructions.txt", "r", encoding="utf-8") as f:
+with open("test_case_agent/instructions.txt", "r", encoding="utf-8") as f:
     instructions = f.read()
 
-test_agent = Agent(
+root_agent = Agent(
     name="test_case_generation_agent",
     model=ROOT_AGENT_MODEL,
     description=(
-        "Agent that processes data from a given table into a new column based on a query given in natural language."
+        """This AI agent is a specialized data processor that transforms a data table into a single list of values 
+        based on a command given in plain English. It reads a user's query, applies the specified calculation to each 
+        row of the provided table, and outputs nothing but a clean JSON list of the results."""
     ),
     instruction=instructions,
     before_model_callback=table_adder,

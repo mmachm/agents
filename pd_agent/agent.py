@@ -1,15 +1,12 @@
-import datetime
-from zoneinfo import ZoneInfo
 from google.adk.agents import Agent
-from config import SUB_AGENT_MODEL
-
+from config import SUB_AGENT_MODEL, ROOT_AGENT_MODEL
 
 with open("pd_agent/instructions.txt", "r", encoding="utf-8") as f:
     instructions = f.read()
 
-pandas_agent = Agent(
+root_agent = Agent(
     name="pandas_agent",
-    model=SUB_AGENT_MODEL,
+    model=ROOT_AGENT_MODEL,
     description=(
         """This agent specializes in data manipulation and feature engineering within a Pandas DataFrame. It understands
          the structure of a given DataFrame, including the meaning of each column. Based on a user's request, it 
