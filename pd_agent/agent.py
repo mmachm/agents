@@ -3,8 +3,6 @@ from zoneinfo import ZoneInfo
 from google.adk.agents import Agent
 from config import ROOT_AGENT_MODEL
 
-from pd_agent.instructions import instructions
-
 
 def get_weather(city: str) -> dict:
     """Retrieves the current weather report for a specified city.
@@ -57,7 +55,9 @@ def get_current_time(city: str) -> dict:
     )
     return {"status": "success", "report": report}
 
-
+with open("pd_agent/instructions.txt", "r", encoding="utf-8") as f:
+    instructions = f.read()
+    
 root_agent = Agent(
     name="weather_time_agent",
     model=ROOT_AGENT_MODEL,
