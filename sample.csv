@@ -1,0 +1,11 @@
+match_id,home_player,away_player,home_team,away_team,player_pair,mw_prob_home,mw_prob_away,inp_total_points,tp_threshold,tp_prob_over,tp_prob_under,FT_home_points,FT_away_points,FT_total_points
+1842639.0,IceKimi,Luka,Brooklyn Nets,Golden State Warriors,IceKimi_Luka,0.8422,0.1578,131.94,131.5,0.5074,0.4925,77.0,69.0,146.0
+1842640.0,Donovan,Luka,Boston Celtics,Philadelphia 76ers,Donovan_Luka,0.166,0.834,113.8,113.5,0.5043,0.4957,53.0,62.0,115.0
+1842641.0,IceKimi,Donovan,Boston Celtics,Philadelphia 76ers,Donovan_IceKimi,0.9517,0.0483,115.5,115.5,0.4938,0.5062,59.0,49.0,108.0
+1842642.0,IceKimi,Luka,Toronto Raptors,Washington Wizards,IceKimi_Luka,0.8422,0.1578,133.13,133.5,0.4914,0.5086,64.0,61.0,125.0
+1842643.0,Donovan,Luka,Toronto Raptors,Washington Wizards,Donovan_Luka,0.1629,0.8371,113.8,113.5,0.5043,0.4957,65.0,71.0,136.0
+1842644.0,IceKimi,Donovan,Los Angeles Lakers,New York Knicks,Donovan_IceKimi,0.952,0.048,113.0,113.5,0.4822,0.5178,71.0,48.0,119.0
+1842645.0,IceKimi,Luka,Los Angeles Lakers,New York Knicks,IceKimi_Luka,0.8448,0.1552,131.94,131.5,0.5118,0.4882,61.0,64.0,125.0
+1842646.0,Donovan,Luka,Atlanta Hawks,Detroit Pistons,Donovan_Luka,0.1614,0.8386,115.9,115.5,0.5103,0.4897,55.0,73.0,128.0
+1842647.0,IceKimi,Donovan,Atlanta Hawks,Detroit Pistons,Donovan_IceKimi,0.9522,0.0478,114.5,114.5,0.494,0.506,81.0,42.0,123.0
+1842648.0,IceKimi,Luka,Cleveland Cavaliers,Utah Jazz,IceKimi_Luka,0.8161,0.1839,130.63,130.5,0.5024,0.4976,69.0,57.0,126.0
