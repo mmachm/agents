@@ -6,8 +6,6 @@ from google.genai.types import Part
 
 from config import ROOT_AGENT_MODEL
 
-from .instructions import instructions
-
 
 # --- Define the Callback Function ---
 def table_adder(callback_context: CallbackContext, llm_request: LlmRequest) -> LlmResponse | None:
@@ -20,8 +18,10 @@ def table_adder(callback_context: CallbackContext, llm_request: LlmRequest) -> L
         print(f"[Callback] Added data table for agent: {agent_name}")
     return None
 
+with open("pd_agent/instructions.txt", "r", encoding="utf-8") as f:
+    instructions = f.read()
 
-root_agent = Agent(
+test_agent = Agent(
     name="test_case_generation_agent",
     model=ROOT_AGENT_MODEL,
     description=(
