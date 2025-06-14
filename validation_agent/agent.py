@@ -37,6 +37,10 @@ def tester(code_string: str, result_json_string: str, column_name: str) -> dict[
             if str(test_case) == str(generated):
                 continue
             # extra check for numeric values
+            if test_case is None:
+                test_case = "nan"
+            if generated is None:
+                generated = "nan"
             try:
                 tc_float = float(test_case)
                 gen_float = float(generated)
@@ -48,7 +52,7 @@ def tester(code_string: str, result_json_string: str, column_name: str) -> dict[
                 "status": "error",
                 "message": f"Number mismatch at position {i}: code gave {gen_float}, but the result_json_string had {tc_float}."
                 }
-            except ValueError:
+            except Exception as e:
                 # If conversion to float fails, treat as a non-numeric comparison
                 return {
                     "status": "error",
