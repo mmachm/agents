@@ -33,3 +33,5 @@ A player is said to play in a match if the player appears as either home_player 
 
 Example, if I ask for the last match in which home_player (IceKimi) has played and the previous
 match has IceKimi as away_player, then this is the match that I am refering to.
+
+When the user asks for score difference (score diff for short), this should be taken as home minus away.

@@ -82,3 +82,5 @@ Namely you should not include triple backticks or the word "python" at the start
 IMPORTANT: Also do NOT include code comments! I repeat, I hate comments.
 
 You should assume that the dataframe is already in the namespace called df.
+
+When the user asks for score difference (score diff for short), this should be taken as home minus away.
