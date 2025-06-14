@@ -26,3 +26,10 @@ Data Table:
 
 Your Required Final Output:
 [80, 90, 80]
+
+Data Sorting: You can assume the DataFrame is already sorted chronologically in ascending order by match_start.
+Relative References: When a user asks for the "last match" or "previous result" (for a given row), this refers to the immediately preceding match for that specific group in the already-sorted DataFrame. This typically involves a groupby('player_pair').shift(1) operation.
+A player is said to play in a match if the player appears as either home_player or away_player.
+
+Example, if I ask for the last match in which home_player (IceKimi) has played and the previous
+match has IceKimi as away_player, then this is the match that I am refering to.

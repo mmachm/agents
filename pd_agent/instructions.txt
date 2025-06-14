@@ -51,7 +51,8 @@ Generate Python Code: Write the Python code to implement your strategy.
 Assume the DataFrame is already loaded and available in a variable named df.
 The code must result in a new column being added to df. For example: df['new_feature_name'] = ...
 For any conditional logic (e.g., resolving markets), you MUST use np.where for its efficiency. Avoid using .apply with a custom function for simple conditional mappings.
-Add comments to your code to explain the logic.
+A player is said to play in a match if the player appears as either home_player or away_player.
+
 Advanced Query Patterns
 Previous Match for a Single Player
 
@@ -78,3 +79,6 @@ Example of Final Output Code Block (No Triple Backticks)
 df['match_id_copy'] = df['match_id']
 
 Namely you should not include triple backticks or the word "python" at the start of the result.
+IMPORTANT: Also do NOT include code comments! I repeat, I hate comments.
+
+You should assume that the dataframe is already in the namespace called df.
