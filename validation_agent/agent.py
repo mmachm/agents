@@ -50,13 +50,13 @@ def tester(code_string: str, result_json_string: str, column_name: str) -> dict[
                     continue
                 return {
                 "status": "error",
-                "message": f"Number mismatch at position {i}: code gave {gen_float}, but the result_json_string had {tc_float}."
+                "message": f"Number mismatch at position {i}: code gave {result}, but the result_json_string had {result_json}."
                 }
-            except Exception as e:
+            except (ValueError, TypeError, OverflowError) as e:
                 # If conversion to float fails, treat as a non-numeric comparison
                 return {
                     "status": "error",
-                    "message": f"Data mismatch at position {i}: code gave {generated}, but the result_json_string had {test_case}."
+                    "message": f"Data mismatch at position {i}: code gave {result}, but the result_json_string had {result_json}."
                 }
     except json.JSONDecodeError as e:
         return {"status": "error", "message": "JSON parsing error: " + str(e)}
