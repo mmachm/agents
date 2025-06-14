@@ -22,7 +22,7 @@ with open("test_case_agent/instructions.txt", "r", encoding="utf-8") as f:
     instructions = f.read()
 
 root_agent = Agent(
-    name="test_case_generation_agent",
+    name="direct_data_calculator_agent",
     model=ROOT_AGENT_MODEL,
     description=(
         """This AI agent is a specialized data processor that transforms a data table into a single list of values 
@@ -31,4 +31,5 @@ root_agent = Agent(
     ),
     instruction=instructions,
     before_model_callback=table_adder,
+    #output_key="direct_data_calculator_agent_output",
 )

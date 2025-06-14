@@ -2,7 +2,7 @@ import json
 from typing import Any
 
 import pandas as pd
-from google.adk.agents import Agent
+from google.adk.agents import Agent, SequentialAgent, ParallelAgent
 from google.adk.tools import FunctionTool
 from google.adk.tools.agent_tool import AgentTool
 
@@ -41,10 +41,23 @@ root_agent = Agent(
     model=ROOT_AGENT_MODEL,
     description=description,
     instruction=instructions,
-    tools=[
-        AgentTool(agent=pandas_agent, skip_summarization=True),
-        AgentTool(agent=test_agent, skip_summarization=True),
-        AgentTool(agent=validation_agent, skip_summarization=True),
+    #tools=[
+        #AgentTool(agent=pandas_agent, skip_summarization=True),
+        #AgentTool(agent=test_agent, skip_summarization=True),
+        #AgentTool(agent=validation_agent, skip_summarization=True),
+    #],
+    sub_agents=[
+        SequentialAgent(
+            name="sequential_agent",
+            sub_agents=[        
+                ParallelAgent(
+                    name="ResearchAndSynthesisPipeline",
+                    sub_agents=[pandas_agent, test_agent],
+                    description="Coordinates the generation of code and research and synthesizes the results.",
+                ),
+                validation_agent,
+            ]
+        )
     ],
 )
 #flash-preview-05-20

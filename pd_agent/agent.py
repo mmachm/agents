@@ -5,7 +5,7 @@ with open("pd_agent/instructions.txt", "r", encoding="utf-8") as f:
     instructions = f.read()
 
 root_agent = Agent(
-    name="pandas_agent",
+    name="feature_code_generator_agent",
     model=ROOT_AGENT_MODEL,
     description=(
         """This agent specializes in data manipulation and feature engineering within a Pandas DataFrame. It understands
@@ -14,4 +14,5 @@ root_agent = Agent(
          primary function is to translate a high-level feature description into executable Pandas code."""
     ),
     instruction=instructions,
+    #output_key="feature_code_generator_agent_output",
 )
